@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Tests
 {
-    public class FileScannerTests
+    public class VideoXmlTests
     {
         [Fact]
         public void ScanXml_NoTelemetryTypeAssociations_Null()
@@ -13,7 +13,7 @@ namespace Tests
                   <TelemetryTypeAssociations />
                 </RawMovie_t>";
 
-            var scanner = new FileScanner();
+            var scanner = new VideoXml();
             var result = scanner.ScanXml(xml);
             Assert.Null(result);
         }
@@ -28,7 +28,7 @@ namespace Tests
                   </TelemetryTypeAssociations>
                 </RawMovie_t>";
 
-            var scanner = new FileScanner();
+            var scanner = new VideoXml();
             var result = scanner.ScanXml(xml);
             Assert.Equal("<Foo />", result);
         }

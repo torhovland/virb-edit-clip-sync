@@ -2,7 +2,7 @@ using System.Xml;
 
 namespace Domain
 {
-    public class FileScanner
+    public class VideoXml
     {
         public string ScanXml(string xml)
         {
