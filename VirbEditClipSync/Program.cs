@@ -35,6 +35,7 @@ namespace VirbEditClipSync
                 var videoXmlPath = Path.Combine(clipDirectory, "video.xml");
                 var videoXmlFile = await File.ReadAllTextAsync(videoXmlPath);
                 var updatedFile = videoXml.SetGMetrix(videoXmlFile, scanResultToUse);
+                updatedFile = videoXml.UpdateTimings(updatedFile);
                 await File.WriteAllTextAsync(videoXmlPath, updatedFile);
             }
 
